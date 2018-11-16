@@ -1,0 +1,15 @@
+.Titlebar{
+    text-align: left;
+    height: 3em;
+    background: whitesmoke;
+    padding-left: 3em;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Titlebar-title {
+    height: 1em;
+    font-size: 30px;
+}
