@@ -5,7 +5,7 @@ import "./css/TemperatureWidget.css"
 class TemperatureWidget extends Component {
     constructor(props) {
         super(props);
-        this.state = { value: 5 };
+        this.state = { value: 20 };
     }
 
     updateValue = () => {

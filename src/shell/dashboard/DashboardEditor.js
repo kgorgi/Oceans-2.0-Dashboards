@@ -5,6 +5,7 @@ import GoldenLayout from 'golden-layout';
 
 import "./css/DashboardEditor.css";
 import TemperatureWidget from './widgets/TemperatureWidget';
+import ImageWidget from './widgets/ImageWidget';
 
 class DashboardEditor extends Component {
   constructor(props) {
@@ -43,8 +44,8 @@ class DashboardEditor extends Component {
           type: 'column',
           content:[{
             type:'react-component',
-            component: 'test-component',
-            props: { label: 'Widget E' }
+            component: 'image',
+            props: { filename: './seafloor1.png' }
           },{
             type:'react-component',
             component: 'temperature',
@@ -58,6 +59,7 @@ class DashboardEditor extends Component {
     window.ReactDOM = ReactDOM;
     myLayout.registerComponent( 'test-component', Container );
     myLayout.registerComponent( 'temperature', TemperatureWidget );
+    myLayout.registerComponent( 'image', ImageWidget);
     myLayout.init();
   }
 
