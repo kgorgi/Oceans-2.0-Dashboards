@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Container from "./Container";
+import Container from "./widgets/Container";
 import GoldenLayout from 'golden-layout';
 
-import "./css/Dashboard.css";
+import "./css/DashboardEditor.css";
+import TemperatureWidget from './widgets/TemperatureWidget';
 
-class Dashboard extends Component {
+class DashboardEditor extends Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
@@ -13,6 +14,18 @@ class Dashboard extends Component {
   
   componentDidMount() {
     let myLayout = new GoldenLayout({
+      settings:{
+        hasHeaders: true,
+        constrainDragToContainer: true,
+        reorderEnabled: true,
+        selectionEnabled: false,
+        popoutWholeStack: false,
+        blockedPopoutsThrowError: true,
+        closePopoutsOnUnload: true,
+        showPopoutIcon: false,
+        showMaximiseIcon: false,
+        showCloseIcon: true
+    },
       content: [{
         type: 'row',
         content:[{
@@ -31,38 +44,34 @@ class Dashboard extends Component {
           content:[{
             type:'react-component',
             component: 'test-component',
-            props: { label: 'Widget C' }
-          },{
-            type:'react-component',
-            component: 'test-component',
-            props: { label: 'Widget D' }
-          }]
-        }, {
-          type: 'column',
-          content:[{
-            type:'react-component',
-            component: 'test-component',
             props: { label: 'Widget E' }
           },{
             type:'react-component',
-            component: 'test-component',
-            props: { label: 'Widget F' }
+            component: 'temperature',
+            props: null
           }]
         }]
       }]
-    }, window.document.getElementById("Dashboard"));
+    }, window.document.getElementById("DashboardEditor-dashboard"));
     
     window.React = React;
     window.ReactDOM = ReactDOM;
     myLayout.registerComponent( 'test-component', Container );
+    myLayout.registerComponent( 'temperature', TemperatureWidget );
     myLayout.init();
   }
 
   render() {
     return (
-      <div id="Dashboard" className="Dashboard"ref={this.myRef}/>
+      <div className="DashboardEditor">
+        <div className="DashboardEditor-widgetLibrary">
+          <div className="DashboardEditor-widgetLibraryTitle">Widget Library</div>
+        </div>
+        <div id="DashboardEditor-dashboard" className="DashboardEditor-dashboard" ref={this.myRef}/>
+      </div>
+      
     );
   }
 }
 
-export default Dashboard;
+export default DashboardEditor;

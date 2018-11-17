@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Dashboard from "./dashboard/Dashboard";
+import DashboardEditor from "./dashboard/DashboardEditor";
 import Titlebar from "./Titlebar"
 
 import './css/App.css';
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Titlebar /> 
-        <Dashboard />
+        <DashboardEditor />
       </div> 
     );
   }

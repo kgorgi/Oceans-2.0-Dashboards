@@ -1,15 +1,25 @@
 .Titlebar{
     text-align: left;
     height: 3em;
-    background: whitesmoke;
-    padding-left: 3em;
-    vertical-align: center;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     flex-direction: row;
+    padding: 0.5em 2em;
+    border-style:solid;
+    border-width: 5px;
+    border-color: rgb(30, 180, 206);
 }
 
 .Titlebar-title {
+    padding-left: 1em;
     height: 1em;
-    font-size: 30px;
+    font-size: 2.5em;
+    font-family: bold;
+    color:  #e0e0e0;
+}
+
+.Titlebar-logo {
+    height: 100%;
+
 }

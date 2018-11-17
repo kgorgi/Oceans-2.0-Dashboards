@@ -1,0 +1,43 @@
+.DashboardEditor {
+    flex: 1;
+    display: flex;
+
+    border-bottom-width: 5px;
+    border-bottom-color: rgb(30, 180, 206);
+    border-bottom-style: solid;
+    
+    border-left-width: 5px;
+    border-left-color: rgb(30, 180, 206);
+    border-left-style: solid;
+
+    border-right-width: 5px;
+    border-right-color: rgb(30, 180, 206);
+    border-right-style: solid;
+}
+
+.DashboardEditor-dashboard {
+    flex: 1;
+    padding: 2px;
+    background: black;
+}
+
+.DashboardEditor-widgetLibrary {
+    width: 12em;
+    background: rgba(0, 0, 0, 0.8);
+
+    border-style: solid;
+    border-right-width: 5px;
+    border-right-color: rgb(30, 180, 206);
+    
+}
+
+.DashboardEditor-widgetLibraryTitle {
+    padding: 0.3em 0em;
+    font-size: 1.5em;
+    font-family: bold;
+    color:  #e0e0e0;
+
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(30, 180, 206);
+}
