@@ -19,7 +19,7 @@ class ImageWidget extends Component {
     
     render(){
         return (
-            <img className="ImageWidget" src={"./seafloor" + this.state.value.toString() + ".png"} />
+            <img className="ImageWidget" src={"./seafloor" + this.state.value.toString() + ".png"} alt="Images" />
         )
     } 
 
