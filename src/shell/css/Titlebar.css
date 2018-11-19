@@ -6,22 +6,21 @@
     align-items: center;
     flex-direction: row;
     padding: 0.5em 2em;
-    border-style:solid;
-    border-width: 5px;
-    border-color: black;
+    border-bottom-style:solid;
+    border-bottom-width: 5px;
     border-bottom-color: rgb(30, 180, 206);
 }
 
 .Titlebar-title {
     padding-left: 1em;
-    height: 1em;
-    font-size: 2em;
+    height: 100%;
+    font-size: 2.5em;
     font-family: bold;
-    color:  #e0e0e0;
+    color:  white;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    margin: 0 0;
 }
 
 .Titlebar-logo {
     height: 100%;
-
 }

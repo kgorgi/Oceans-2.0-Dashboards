@@ -1,9 +1,13 @@
+/* 
+    Donut Chart Source Code
+    https://github.com/row1/react-declarative-d3/tree/master/src/views/bar-chart
+*/
+
 import React from 'react';
 import { scaleOrdinal } from 'd3-scale';
 import { arc as d3Arc, pie as d3Pie } from 'd3-shape';
 import { csvParse } from 'd3-dsv';
 
-// Same as data.csv
 import dataCsv from './data/DonutChartData';
 
 import './css/DonutChartWidget.css';
@@ -42,7 +46,7 @@ const data = pie(
 class DonutChartWidget extends React.Component {
     render(){
         return (
-            <svg width={width} height={height}>
+            <svg className="DonutChartWidget" width={width} height={height}>
                 <g transform={`translate(${width / 2}, ${height / 2})`}>
                     {data.map(d => (
                     <g className="arc" key={`a${d.data.age}`}>

@@ -9,12 +9,16 @@ import ImageWidget from './widgets/ImageWidget';
 import BarChartWidget from './widgets/BarChartWidget';
 import DonutChartWidget from './widgets/DonutChartWidget';
 
+import {
+  SeafloorImagesConfig,
+  SeafloorTempConfig, 
+  WindSpeedConfig, 
+  BarChartConfig, 
+  DonutChartConfig
+} from "./WidgetConfig";
+
 class DashboardEditor extends Component {
-  constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-  }
-  
+
   componentDidMount() {
     let myLayout = new GoldenLayout({
       settings:{
@@ -35,50 +39,24 @@ class DashboardEditor extends Component {
           type: 'column',
           content:[{
             type: "row",
-            content: [{
-              type:'react-component',
-              title: "Wind Speed",
-              component: 'scalar',
-              props: { 
-                title: "Wind Speed",
-                units: "km/h",
-                initValue: 30
-              }
-            },{
-              type:'react-component',
-              component: 'scalar',
-              title: "Seafloor Temperature",
-              props: { 
-                title: "Seafloor Temperature",
-                units: "C",
-                initValue: 15
-              }
-            }]
-          },{
-            type:'react-component',
-            title: "Bar Chart",
-            component: 'barchart',
-            props: null
-          }]
+            content: [ WindSpeedConfig ]
+          }, BarChartConfig ]
         }, {
           type: 'column',
-          content:[{
-            type:'react-component',
-            title: "Seafloor Images",
-            component: 'image',
-            props: null
-          },{
-            type:'react-component',
-            title: "Donut Chart",
-            component: 'donutchart',
-            props: null
-          }]
+          content:[ SeafloorImagesConfig, DonutChartConfig]
         }]
       }]
     }, window.document.getElementById("DashboardEditor-dashboard"));
     
     window.React = React;
     window.ReactDOM = ReactDOM;
+
+    myLayout.createDragSource(window.document.getElementById("windspeed"), WindSpeedConfig);
+    myLayout.createDragSource(window.document.getElementById("seafloorTemp"), SeafloorTempConfig);
+    myLayout.createDragSource(window.document.getElementById("barChart"), BarChartConfig);
+    myLayout.createDragSource(window.document.getElementById("donutChart"), DonutChartConfig);
+    myLayout.createDragSource(window.document.getElementById("seafloorImgs"), SeafloorImagesConfig);
+
     myLayout.registerComponent( 'text', TextWidget );
     myLayout.registerComponent( 'scalar', ScalarWidget );
     myLayout.registerComponent( 'image', ImageWidget);
@@ -92,8 +70,13 @@ class DashboardEditor extends Component {
       <div className="DashboardEditor">
         <div className="DashboardEditor-widgetLibrary">
           <div className="DashboardEditor-widgetLibraryTitle">Widget Library</div>
+          <div id="windspeed" className="DashboardEditor-widgetLibraryItem">Wind Speed</div>
+          <div id="seafloorTemp" className="DashboardEditor-widgetLibraryItem">Seafloor Temperature</div>
+          <div id="barChart" className="DashboardEditor-widgetLibraryItem">Bar Chart</div>
+          <div id="donutChart" className="DashboardEditor-widgetLibraryItem">Donut Chart</div>
+          <div id="seafloorImgs" className="DashboardEditor-widgetLibraryItem">Seafloor Images</div>
         </div>
-        <div id="DashboardEditor-dashboard" className="DashboardEditor-dashboard" ref={this.myRef}/>
+        <div id="DashboardEditor-dashboard" className="DashboardEditor-dashboard" />
       </div>
       
     );

@@ -3,6 +3,10 @@
     https://github.com/row1/react-declarative-d3/tree/master/src/views/bar-chart
 */
 
+.DonutChartWidget {
+    margin: 2em;
+    background: white;
+}
 .arc text {
     font: 10px sans-serif;
     text-anchor: middle;
