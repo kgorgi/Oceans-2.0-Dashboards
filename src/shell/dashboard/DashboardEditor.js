@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Container from "./widgets/Container";
+import TextWidget from "./widgets/TextWidget";
 import GoldenLayout from 'golden-layout';
 
 import "./css/DashboardEditor.css";
-import TemperatureWidget from './widgets/TemperatureWidget';
+import ScalarWidget from './widgets/ScalarWidget';
 import ImageWidget from './widgets/ImageWidget';
-import BarChart from './widgets/BarChart';
+import BarChartWidget from './widgets/BarChartWidget';
 
 class DashboardEditor extends Component {
   constructor(props) {
@@ -34,15 +34,16 @@ class DashboardEditor extends Component {
           type: 'column',
           content:[{
             type:'react-component',
-            component: 'test-component',
-            props: { label: 'Widget A' }
+            component: 'scalar',
+            props: { 
+              title: "Wind Speed",
+              units: "km/h",
+              initValue: 30
+            }
           },{
             type:'react-component',
             component: 'barchart',
-            props: { 
-              data:[5,10,1,3], 
-              size: [150,150] 
-            }
+            props: null
           }]
         }, {
           type: 'column',
@@ -52,8 +53,12 @@ class DashboardEditor extends Component {
             props: null
           },{
             type:'react-component',
-            component: 'temperature',
-            props: null
+            component: 'scalar',
+            props: { 
+              title: "Seafloor Temperature",
+              units: "C",
+              initValue: 15
+            }
           }]
         }]
       }]
@@ -61,10 +66,10 @@ class DashboardEditor extends Component {
     
     window.React = React;
     window.ReactDOM = ReactDOM;
-    myLayout.registerComponent( 'test-component', Container );
-    myLayout.registerComponent( 'temperature', TemperatureWidget );
+    myLayout.registerComponent( 'test-component', TextWidget );
+    myLayout.registerComponent( 'scalar', ScalarWidget );
     myLayout.registerComponent( 'image', ImageWidget);
-    myLayout.registerComponent( 'barchart', BarChart);
+    myLayout.registerComponent( 'barchart', BarChartWidget);
     myLayout.init();
   }
 

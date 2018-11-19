@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import "./css/TemperatureWidget.css"
+import "./css/ScalarWidget.css"
 
-class TemperatureWidget extends Component {
+class ScalarWidget extends Component {
     constructor(props) {
         super(props);
-        this.state = { value: 20 };
+        this.state = { value: props.initValue };
     }
 
     updateValue = () => {
@@ -23,10 +23,9 @@ class TemperatureWidget extends Component {
     
     render(){
         return (
-            <h1 className="TemperatureWidget">
-                Seafloor<br />
-                Temperature: <br />
-                {this.state.value} C
+            <h1 className="ScalarWidget">
+                {this.props.title}: <br />
+                {this.state.value} {this.props.units}
             </h1>
         )
     } 
@@ -34,8 +33,6 @@ class TemperatureWidget extends Component {
     componentDidMount(){
         setInterval(this.updateValue, 4000);
     }
-
-    
 }
 
-export default TemperatureWidget;
+export default ScalarWidget;

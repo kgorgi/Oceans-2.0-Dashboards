@@ -1,0 +1,20 @@
+/* 
+    Bar Chart Source Code
+    https://github.com/row1/react-declarative-d3/tree/master/src/views/bar-chart
+*/
+
+.bar {
+    fill: steelblue;
+}
+  
+.bar:hover {
+    fill: brown;
+}
+  
+.axis--x path {
+    display: none;
+}
+
+.BarChart {
+    background: white;
+}
