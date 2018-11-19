@@ -1,5 +1,5 @@
 /* 
-    Bar Chart Source Code (With Modification)
+    Bar Chart Source Code
     https://github.com/row1/react-declarative-d3/tree/master/src/views/bar-chart
 */
 

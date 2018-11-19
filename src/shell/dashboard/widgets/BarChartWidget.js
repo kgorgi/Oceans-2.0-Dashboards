@@ -13,7 +13,7 @@ import { select } from 'd3-selection';
 // Same as data.tsv
 import dataTsv from './data/BarChartData';
 
-import './css/BarChart.css';
+import './css/BarChartWidget.css';
 
 const svgWidth = 500,
     svgHeight = 300;

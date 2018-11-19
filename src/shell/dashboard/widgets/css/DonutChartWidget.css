@@ -1,0 +1,13 @@
+/* 
+    Donut Chart Source Code
+    https://github.com/row1/react-declarative-d3/tree/master/src/views/bar-chart
+*/
+
+.arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+  }
+  
+  .arc path {
+    stroke: #fff;
+  }

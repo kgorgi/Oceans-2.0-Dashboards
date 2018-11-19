@@ -7,6 +7,7 @@ import "./css/DashboardEditor.css";
 import ScalarWidget from './widgets/ScalarWidget';
 import ImageWidget from './widgets/ImageWidget';
 import BarChartWidget from './widgets/BarChartWidget';
+import DonutChartWidget from './widgets/DonutChartWidget';
 
 class DashboardEditor extends Component {
   constructor(props) {
@@ -33,15 +34,29 @@ class DashboardEditor extends Component {
         content:[{
           type: 'column',
           content:[{
-            type:'react-component',
-            component: 'scalar',
-            props: { 
+            type: "row",
+            content: [{
+              type:'react-component',
               title: "Wind Speed",
-              units: "km/h",
-              initValue: 30
-            }
+              component: 'scalar',
+              props: { 
+                title: "Wind Speed",
+                units: "km/h",
+                initValue: 30
+              }
+            },{
+              type:'react-component',
+              component: 'scalar',
+              title: "Seafloor Temperature",
+              props: { 
+                title: "Seafloor Temperature",
+                units: "C",
+                initValue: 15
+              }
+            }]
           },{
             type:'react-component',
+            title: "Bar Chart",
             component: 'barchart',
             props: null
           }]
@@ -49,16 +64,14 @@ class DashboardEditor extends Component {
           type: 'column',
           content:[{
             type:'react-component',
+            title: "Seafloor Images",
             component: 'image',
             props: null
           },{
             type:'react-component',
-            component: 'scalar',
-            props: { 
-              title: "Seafloor Temperature",
-              units: "C",
-              initValue: 15
-            }
+            title: "Donut Chart",
+            component: 'donutchart',
+            props: null
           }]
         }]
       }]
@@ -66,10 +79,11 @@ class DashboardEditor extends Component {
     
     window.React = React;
     window.ReactDOM = ReactDOM;
-    myLayout.registerComponent( 'test-component', TextWidget );
+    myLayout.registerComponent( 'text', TextWidget );
     myLayout.registerComponent( 'scalar', ScalarWidget );
     myLayout.registerComponent( 'image', ImageWidget);
     myLayout.registerComponent( 'barchart', BarChartWidget);
+    myLayout.registerComponent( 'donutchart', DonutChartWidget);
     myLayout.init();
   }
 

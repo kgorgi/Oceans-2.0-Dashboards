@@ -7,7 +7,7 @@ class Titlebar extends Component {
     return (
       <div className="Titlebar">
         <img className="Titlebar-logo" src="./logo.png" />
-        <div className="Titlebar-title">Oceans 2.0 Dashboards Prototype</div>
+        <h1 className="Titlebar-title">Oceans 2.0 Dashboards Prototype</h1>
       </div> 
     );
   }
