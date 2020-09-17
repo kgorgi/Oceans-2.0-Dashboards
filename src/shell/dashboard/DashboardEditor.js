@@ -14,8 +14,10 @@ import {
   SeafloorTempConfig, 
   WindSpeedConfig, 
   BarChartConfig, 
-  DonutChartConfig
+  DonutChartConfig,
+  VideoWidgetConfig,
 } from "./WidgetConfig";
+import VideoWidget from './widgets/VideoWidget';
 
 class DashboardEditor extends Component {
 
@@ -37,13 +39,10 @@ class DashboardEditor extends Component {
         type: 'row',
         content:[{
           type: 'column',
-          content:[{
-            type: "row",
-            content: [ WindSpeedConfig ]
-          }, BarChartConfig ]
+          content:[ SeafloorImagesConfig, BarChartConfig ]
         }, {
           type: 'column',
-          content:[ SeafloorImagesConfig, DonutChartConfig]
+          content:[ VideoWidgetConfig, DonutChartConfig]
         }]
       }]
     }, window.document.getElementById("DashboardEditor-dashboard"));
@@ -56,12 +55,14 @@ class DashboardEditor extends Component {
     myLayout.createDragSource(window.document.getElementById("barChart"), BarChartConfig);
     myLayout.createDragSource(window.document.getElementById("donutChart"), DonutChartConfig);
     myLayout.createDragSource(window.document.getElementById("seafloorImgs"), SeafloorImagesConfig);
+    myLayout.createDragSource(window.document.getElementById("video"), VideoWidgetConfig);
 
     myLayout.registerComponent( 'text', TextWidget );
     myLayout.registerComponent( 'scalar', ScalarWidget );
     myLayout.registerComponent( 'image', ImageWidget);
     myLayout.registerComponent( 'barchart', BarChartWidget);
     myLayout.registerComponent( 'donutchart', DonutChartWidget);
+    myLayout.registerComponent( 'video', VideoWidget);
     myLayout.init();
   }
 
@@ -75,6 +76,7 @@ class DashboardEditor extends Component {
           <div id="barChart" className="DashboardEditor-widgetLibraryItem">Bar Chart</div>
           <div id="donutChart" className="DashboardEditor-widgetLibraryItem">Donut Chart</div>
           <div id="seafloorImgs" className="DashboardEditor-widgetLibraryItem">Seafloor Images</div>
+          <div id="video" className="DashboardEditor-widgetLibraryItem">Ocean Video</div>
         </div>
         <div id="DashboardEditor-dashboard" className="DashboardEditor-dashboard" />
       </div>
