@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Oceans 2.0 Dashboards Prototype
+
+This repository is a prototype custom dashboard builder for [Ocean Networks Canada](https://www.oceannetworks.ca/). The purpose of this repository was a technology demo to showcase that reusable dashboards could be built using off the shelf components such as React, TypeScript, and D3.js. After this technology demo, the next steps for Ocean Networks Canada would be to create a full-set of easy-to-use dashboard components so that users can easily search, view, and manipulate the over 500 TB data available through Ocean Networks Canada's [Oceans 2.0 API](https://wiki.oceannetworks.ca/display/O2A/Oceans+2.0+API+Home). 
+
+## Demo
+
+![demo](./demo.gif)
 
 ## Available Scripts
 
@@ -26,19 +32,3 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
