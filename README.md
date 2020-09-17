@@ -1,6 +1,6 @@
 # Oceans 2.0 Dashboards Prototype
 
-This repository is a prototype custom dashboard builder for [Ocean Networks Canada](https://www.oceannetworks.ca/). The purpose of this repository was a technology demo to showcase that reusable dashboards could be built using off the shelf components such as React, TypeScript, and D3.js. After this technology demo, the next steps for Ocean Networks Canada would be to create a full-set of easy-to-use dashboard components so that users can easily search, view, and manipulate the over 500 TB data available through Ocean Networks Canada's [Oceans 2.0 API](https://wiki.oceannetworks.ca/display/O2A/Oceans+2.0+API+Home). 
+This repository is a prototype custom dashboard builder for [Ocean Networks Canada](https://www.oceannetworks.ca/). The purpose of this repository was a technology demo to showcase that reusable dashboards could be built using off the shelf components such as React, TypeScript, and D3.js. After this technology demo, the next steps for Ocean Networks Canada would be to create a full-set of easy-to-use dashboard components so that users can easily search, view, and manipulate the over 500 TB data available through Ocean Networks Canada's [Oceans 2.0 API](https://wiki.oceannetworks.ca/display/O2A/Oceans+2.0+API+Home). Created for the University of Victoria's SENG 399 (Design Project I) class. 
 
 ## Demo
 
